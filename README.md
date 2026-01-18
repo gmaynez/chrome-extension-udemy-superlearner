@@ -1,12 +1,95 @@
-# Udemy Superlearner
+# ⚡ Udemy Superlearner
 
+Master your learning pace with granular video speed controls on Udemy. Find the perfect tempo for any instructor.
 
-This ([extension](https://www.youtube.com/watch?v=dQw4w9WgXcQ)) adds more granular playback speed options for videos on Udemy so you have it easier at becoming a superlearner.
+![Udemy Superlearner](screenshots/udemy_superlearner.png)
 
-By playing courses at 1.1x speed, you will already save about 10% of playback time, that means that you will be able to finish a 20-hour course in 18 hours, and by gradually progressing by incrementing playback speed as you get used to it, when you reach 1.7x speed you will be able to finish the same 20-hour course in less than 12 hours.
+## Features
 
-It also adds a 0.9x version for the videos where you feel the instructor is going too fast. Anything lower than 0.9x generally results in an uncomfortable sloth-like audio.
-<br/>
-<br/>
+- 🎚️ **Granular Speed Control** - 5% increments (0.05x) from 0.5x to 3.0x
+- ⌨️ **Keyboard Shortcuts** - Quick adjustments while watching
+- 💾 **Persistent Settings** - Your speed syncs across devices
+- 🎯 **Quick Presets** - Jump to common speeds instantly
+- 🖥️ **Popup UI** - Easy access to all controls
+- 🔧 **Customizable** - Adjust increment sizes, min/max speeds
 
-![Example Image](/screenshots/udemy_superlearner.png)
+## Why Granular Controls?
+
+Different instructors speak at different paces. The standard 0.25x jumps (1x → 1.25x → 1.5x) are often too coarse:
+
+- **1.25x** might be too slow for a fast speaker
+- **1.5x** might be too fast to comprehend
+
+With **5% increments**, you can find your "sweet spot" - like **1.35x** or **1.45x** - maximizing learning speed while retaining comprehension.
+
+## Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| `Shift` + `→` | Increase speed (+5%) |
+| `Shift` + `←` | Decrease speed (-5%) |
+| `Ctrl` + `Shift` + `→` | Coarse increase (+25%) |
+| `Ctrl` + `Shift` + `←` | Coarse decrease (-25%) |
+| `Shift` + `1-9` | Quick presets (0.5x to 3x) |
+
+## Installation
+
+### From Source (Developer Mode)
+
+1. Clone this repository
+2. Run `npm install` then `npm run build`
+3. Open Chrome and go to `chrome://extensions`
+4. Enable **Developer mode** (top right)
+5. Click **Load unpacked**
+6. Select the `dist` folder
+
+### From Chrome Web Store
+
+*Coming soon*
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Build the extension
+npm run build
+
+# Watch for changes (auto-rebuild)
+npm run watch
+
+# Package for Chrome Web Store
+npm run package
+```
+
+## Project Structure
+
+```
+extension/
+├── manifest.json        # Extension manifest (V3)
+├── content/
+│   ├── playbackRate.js  # Main content script
+│   └── styles.css       # Injected styles
+├── popup/
+│   ├── popup.html       # Popup UI
+│   ├── popup.css        # Popup styles
+│   └── popup.js         # Popup logic
+└── icons/               # Extension icons
+```
+
+## Configuration
+
+Click the extension icon to access settings:
+
+- **Fine increment**: 1%, 5%, or 10% steps
+- **Coarse increment**: 10%, 25%, or 50% jumps
+- **Min/Max speed**: Customize your speed range
+
+## License
+
+MIT
+
+---
+
+*Learn smarter, not longer.* ⚡

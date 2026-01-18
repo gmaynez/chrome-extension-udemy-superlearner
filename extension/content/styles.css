@@ -1,0 +1,138 @@
+/* Udemy Superlearner - Custom Styles */
+
+/* Speed Menu Styling */
+.superlearner-speed-menu {
+	max-height: 400px !important;
+	overflow-y: auto !important;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.superlearner-speed-menu::-webkit-scrollbar {
+	width: 6px;
+}
+
+.superlearner-speed-menu::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.superlearner-speed-menu::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 3px;
+}
+
+.superlearner-speed-menu::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+/* Menu Items */
+.superlearner-menu-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 16px;
+	cursor: pointer;
+	transition: all 0.15s ease;
+	border-left: 3px solid transparent;
+}
+
+.superlearner-menu-item:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.superlearner-menu-item.active {
+	background: rgba(164, 53, 240, 0.2);
+	border-left-color: #a435f0;
+}
+
+.superlearner-menu-item.active .superlearner-rate {
+	color: #a435f0;
+	font-weight: 600;
+}
+
+/* Preset speeds get a subtle indicator */
+.superlearner-menu-item.preset::after {
+	content: '';
+	width: 4px;
+	height: 4px;
+	background: #a435f0;
+	border-radius: 50%;
+	margin-left: 8px;
+	opacity: 0.6;
+}
+
+.superlearner-menu-item.preset.active::after {
+	opacity: 1;
+}
+
+.superlearner-rate {
+	font-size: 14px;
+	font-weight: 400;
+	color: #fff;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Speed Toast Notification */
+.superlearner-toast {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0.8);
+	background: rgba(0, 0, 0, 0.85);
+	color: #fff;
+	padding: 16px 32px;
+	border-radius: 12px;
+	font-size: 24px;
+	font-weight: 600;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	z-index: 999999;
+	pointer-events: none;
+	opacity: 0;
+	transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(8px);
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.superlearner-toast.show {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.superlearner-toast.hide {
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(0.9);
+}
+
+.superlearner-toast .toast-icon {
+	font-size: 20px;
+}
+
+/* Fullscreen adjustments */
+.player-container.fullscreen .superlearner-speed-menu {
+	max-height: 70vh !important;
+}
+
+/* Dark theme compatibility */
+@media (prefers-color-scheme: dark) {
+	.superlearner-toast {
+		background: rgba(30, 30, 30, 0.95);
+	}
+}
+
+/* Keyboard shortcut hint (optional, shows on hover) */
+.superlearner-menu-item[data-shortcut]::before {
+	content: attr(data-shortcut);
+	position: absolute;
+	right: 12px;
+	font-size: 11px;
+	color: rgba(255, 255, 255, 0.4);
+	opacity: 0;
+	transition: opacity 0.15s;
+}
+
+.superlearner-menu-item:hover[data-shortcut]::before {
+	opacity: 1;
+}

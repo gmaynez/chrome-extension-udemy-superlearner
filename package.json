@@ -1,16 +1,30 @@
 {
-	"name": "chrome-extension-udemy-playback-rate",
-	"version": "1.2.7",
-	"description": "This extension adds additional playback speed options for videos on Udemy. You can watch videos at up to 4x speed!",
+	"name": "udemy-superlearner",
+	"version": "2.0.0",
+	"description": "Master your learning pace with granular video speed controls on Udemy. Find the perfect tempo for any instructor.",
+	"private": true,
 	"scripts": {
-		"webpack": "webpack"
+		"build": "node scripts/build.js",
+		"watch": "node scripts/build.js --watch",
+		"package": "node scripts/package.js",
+		"lint": "eslint extension/**/*.js"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/gitnix/chrome-extension-udemy-playback-rate.git"
+		"url": "git+https://github.com/your-username/udemy-superlearner.git"
 	},
+	"keywords": [
+		"chrome-extension",
+		"udemy",
+		"playback-speed",
+		"video-speed",
+		"learning"
+	],
+	"author": "",
+	"license": "MIT",
 	"devDependencies": {
-		"webpack": "^4.26.0",
-		"webpack-cli": "^3.1.2"
+		"archiver": "^7.0.1",
+		"chokidar": "^4.0.3",
+		"eslint": "^9.18.0"
 	}
 }
